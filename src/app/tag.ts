@@ -7,7 +7,7 @@ import { Component, EventEmitter, Output, input } from '@angular/core';
     <span class="badge badge-soft badge-primary hover:badge-secondary" (click)="handleClick()">
       {{ label() }}
     </span>
-  `
+  `,
 })
 export class TagComponent {
   label = input.required<string>();

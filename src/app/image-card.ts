@@ -6,8 +6,8 @@ export interface ImageInfo {
   path: string;
   name: string;
   created_at: Date;
-  media: string[];
   tags: string[];
+  description: string;
 }
 
 @Component({
@@ -19,7 +19,7 @@ export interface ImageInfo {
       <img [src]="imgSrc()" [alt]="image().name" class="preview" />
       <div class="content">
         <h3>{{ image().name }}</h3>
-        <p class="date">{{ image().created_at | date:'medium' }}</p>
+        <p class="date">{{ image().created_at | date: 'medium' }}</p>
         <div class="flex flex-wrap gap-1">
           @for (tag of image().tags; track tag) {
             <app-tag [label]="tag" (clicked)="onTagClick($event)"></app-tag>
@@ -34,8 +34,10 @@ export interface ImageInfo {
 export class ImageCardComponent {
   image = input.required<ImageInfo>();
 
-  imgSrc = computed(() => `https://raw.githubusercontent.com/ricel123/art/master/${this.image().path}`)
-  
+  imgSrc = computed(
+    () => `https://raw.githubusercontent.com/ricel123/art/master/images/${this.image().path}`,
+  );
+
   onTagClick(tag: string) {
     console.log('Tag clicked:', tag);
   }
