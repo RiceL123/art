@@ -11,18 +11,38 @@ import imagesJSON from '../images.json';
     <main class="p-6 max-w-6xl mx-auto">
       <h1 class="text-3xl font-bold text-center mb-8">RiceL123's Art!</h1>
 
-      <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div class="masonry mb-12">
         @for (img of images; track img.name) {
-          <app-image-card
-            [image]="img"
-            class="card bg-base-200 shadow-md hover:shadow-xl transition"
-          ></app-image-card>
+          <app-image-card [image]="img" class="break-inside-avoid mb-6 block"></app-image-card>
         }
       </div>
 
       <router-outlet />
     </main>
   `,
+  styles: [`
+    .masonry {
+      column-count: 1;
+      column-gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .masonry {
+        column-count: 2;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .masonry {
+        column-count: 3;
+      }
+    }
+
+    app-image-card {
+      display: inline-block;
+      width: 100%;
+    }
+  `]
 })
 export class App {
   images: ImageInfo[] = Object.entries(imagesJSON).map(([key, val]) => ({
