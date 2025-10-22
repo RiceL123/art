@@ -19,14 +19,14 @@ import { ImageCardComponent, ImageInfo } from "./image-card";
 export class App {
   images: ImageInfo[] = [
     {
-      path: 'assets/cat.jpg',
+      path: 'images/andrea.webp',
       name: 'Cat with Book',
       created_at: new Date('2024-10-01'),
       media: [],
       tags: ['cat', 'book', 'funny']
     },
     {
-      path: 'assets/dog.jpg',
+      path: 'images/dog.jpg',
       name: 'Dog with Laptop',
       created_at: new Date('2024-11-15'),
       media: [],

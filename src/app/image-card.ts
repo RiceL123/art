@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { TagComponent } from './tag';
 
@@ -16,7 +16,7 @@ export interface ImageInfo {
   imports: [DatePipe, TagComponent],
   template: `
     <div class="card">
-      <img [src]="image().path" [alt]="image().name" class="preview" />
+      <img [src]="imgSrc()" [alt]="image().name" class="preview" />
       <div class="content">
         <h3>{{ image().name }}</h3>
         <p class="date">{{ image().created_at | date:'medium' }}</p>
@@ -34,6 +34,8 @@ export interface ImageInfo {
 export class ImageCardComponent {
   image = input.required<ImageInfo>();
 
+  imgSrc = computed(() => `https://raw.githubusercontent.com/ricel123/art/master/${this.image().path}`)
+  
   onTagClick(tag: string) {
     console.log('Tag clicked:', tag);
   }
