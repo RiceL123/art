@@ -5,4 +5,4 @@ import { Component } from '@angular/core';
   standalone: true,
   template: ` <p>Images Directory....</p> `,
 })
-export class DirectoryComponent {}
+export class DirectoryPage {}

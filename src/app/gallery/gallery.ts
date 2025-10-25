@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ImageCardComponent, ImageInfo } from './image-card';
-import imagesJSON from '../images.json';
+import { ImageCardComponent, ImageInfo } from '../image-card';
+import imagesJSON from '../../images.json';
 
 @Component({
   selector: 'app-gallery',
@@ -41,7 +41,7 @@ import imagesJSON from '../images.json';
     `,
   ],
 })
-export class GalleryComponent {
+export class GalleryPage {
   images: ImageInfo[] = Object.entries(imagesJSON).map(([key, val]) => ({
     path: key,
     name: key

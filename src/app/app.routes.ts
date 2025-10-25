@@ -1,19 +1,19 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home';
-import { GalleryComponent } from './gallery';
-import { DirectoryComponent } from './directory';
+import { HomePage } from './home/home';
+import { GalleryPage } from './gallery/gallery';
+import { DirectoryPage } from './directory/directory';
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: HomePage,
   },
   {
     path: 'gallery',
-    component: GalleryComponent,
+    component: GalleryPage,
   },
   {
     path: 'directory',
-    component: DirectoryComponent,
+    component: DirectoryPage,
   },
 ];
