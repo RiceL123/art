@@ -8,7 +8,7 @@ import { GraphComponent } from './graph';
   template: `
     <section class="p-6">
       <h1>Welcome to My Site</h1>
-      <p>This is the homepage of my Angular app.</p>
+      <p>This is the homepage of my Angular app to showcase some art???</p>
       <img
         ngSrc="mambo.webp"
         alt="mambo"
